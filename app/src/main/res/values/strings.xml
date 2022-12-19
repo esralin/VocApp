@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">VocApp</string>
+    <string name="vocapp_logo">logo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="intro">VocApp is a purposive app for learning new words and improving vocabulary for all speakers of English, from beginner to advanced learners.</string>
+    <string name="start_button">Let\'s Start!</string>
+    <string name="welcome_to_vocapp">Welcome to VocApp!</string>
+    <string name="librarylogo">librarylogo</string>
+    <string name="before_you_start">Before You Start,</string>
+    <string name="select_a_level">Select a level according to your vocabulary skill.</string>
+    <string name="levelSelectedButton">OK</string>
+    <string name="explain_app">After choosing your level, the definition of the word will appear on the screen for each question and you will be expected to write the word itself according to this definition.</string>
+    <string name="enter_the_word">Enter the word</string>
+    <string name="check_answer">Check Answer</string>
+    <string name="next_question">Next Questıon</string>
+    <string name="wrong_answer_">Wrong Answer: 0</string>
+    <string name="correct_answer_">Correct Answer: 0</string>
+</resources>
