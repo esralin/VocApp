@@ -11,65 +11,72 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="56dp"
         android:text="@string/before_you_start"
         android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.068"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="342dp"
-        android:layout_height="28dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/select_a_level"
+        android:layout_width="347dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/to_understand_your_english_level_you_must_take_a_20_question_placement_test"
+        android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/textView3"
-        app:layout_constraintHorizontal_bias="0.025"
-        app:layout_constraintStart_toStartOf="@+id/textView3"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="362dp"
-        android:layout_height="97dp"
+        android:layout_width="328dp"
+        android:layout_height="184dp"
         android:layout_marginTop="24dp"
         android:text="@string/explain_app"
-        android:textAlignment="inherit"
+        android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="16sp"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/textView4"
-        app:layout_constraintHorizontal_bias="0.062"
+        app:layout_constraintHorizontal_bias="0.631"
         app:layout_constraintStart_toStartOf="@+id/textView4"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
-
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="236dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="48dp"
-        android:background="@color/white"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="@+id/textView6"
-        app:layout_constraintHorizontal_bias="0.518"
-        app:layout_constraintStart_toStartOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@+id/textView6"
-        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <Button
         android:id="@+id/levelSelectedButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="104dp"
+        android:layout_marginTop="16dp"
         android:text="@string/levelSelectedButton"
-        app:layout_constraintEnd_toEndOf="@+id/spinner"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="@+id/spinner"
-        app:layout_constraintTop_toBottomOf="@+id/spinner"
+        app:layout_constraintEnd_toEndOf="@+id/textView6"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
         tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="28dp"
+        android:text="@string/tap_the_icon_to_see_your_profile"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/levelSelectedButton" />
+
+    <ImageView
+        android:id="@+id/profile_icon"
+        android:layout_width="53dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/profileicon"
+        app:layout_constraintEnd_toStartOf="@+id/textView15"
+        app:layout_constraintTop_toBottomOf="@+id/levelSelectedButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
