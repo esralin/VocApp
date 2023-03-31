@@ -13,4 +13,21 @@ data class Word(
     var definition: String = ""
 )
 
+@Entity(tableName = "user_table")
+data class User(
+    @PrimaryKey(autoGenerate = true)
+    var id: Long = 0L,
+    var fullName: String = "",
+    var email: String = "",
+    var password: String = ""
+)
+
+@Entity(tableName = "score_table")
+data class Score(
+    @PrimaryKey(autoGenerate = true)
+    var id: Long = 0L,
+    var score: Double = 0.0
+)
+
+
 

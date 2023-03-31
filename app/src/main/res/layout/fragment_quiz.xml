@@ -83,29 +83,27 @@
             app:layout_constraintTop_toBottomOf="@+id/nextQuestionButton" />
 
         <TextView
-            android:id="@+id/totalCorrectAnswer"
+            android:id="@+id/textView17"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="44dp"
-            android:layout_marginTop="20dp"
-            android:text="@string/correct_answer_"
+            android:layout_marginTop="25dp"
+            android:text="@string/total_score1"
             android:textColor="@color/white"
             android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/answer"
             app:layout_constraintTop_toBottomOf="@+id/answer" />
 
         <TextView
-            android:id="@+id/totalWrongAnswer"
+            android:id="@+id/totalScore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="44dp"
-            android:text="@string/wrong_answer_"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="25dp"
             android:textColor="@color/white"
             android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/totalCorrectAnswer"
+            app:layout_constraintEnd_toEndOf="@+id/answer"
+            app:layout_constraintStart_toEndOf="@+id/textView17"
             app:layout_constraintTop_toBottomOf="@+id/answer" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

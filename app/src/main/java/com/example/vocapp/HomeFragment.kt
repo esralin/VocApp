@@ -23,8 +23,10 @@ class HomeFragment : Fragment() {
 
         startButton.setOnClickListener {
             view.findNavController()
-                .navigate(R.id.action_homeFragment_to_selectLevelFragment)
+                .navigate(R.id.action_homeFragment_to_loginFragment)
         }
+
+
 
 
 
