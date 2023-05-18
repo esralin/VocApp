@@ -1,3 +1,5 @@
+# VocApp
+
 * VocApp is a vocabulary learning mechanism to demonstrate our work in a practical way, constructed as a mobile application, which provides a more personalized learning system by emphasizing the user's English vocabulary level based on their learning progress throughout the use of the application and a score calculation algorithm. In the questions, the definition of the word is given, and the user has to enter the corresponding word to correctly answer the question.
 
 
