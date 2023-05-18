@@ -42,4 +42,8 @@
     <string name="logout">LOGOUT</string>
     <string name="score5">Score:</string>
     <string name="go_to_profile">Go to profile</string>
+    <string name="textviewlasttt2">TextView</string>
+    <string name="start_learn_ng">Start learnıng!</string>
+    <string name="todo6">TODO</string>
+    <string name="explanation3">The answers you give throughout your learning process will affect the difficulty level of the next questions.</string>
 </resources>

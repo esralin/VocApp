@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
-import com.example.vocapp.databinding.FragmentQuizBinding
 import com.example.vocapp.databinding.FragmentSignUpBinding
 import com.google.android.material.snackbar.Snackbar
 

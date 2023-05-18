@@ -9,6 +9,7 @@ import android.widget.Button
 import androidx.navigation.findNavController
 
 
+
 class HomeFragment : Fragment() {
 
 
@@ -25,10 +26,6 @@ class HomeFragment : Fragment() {
             view.findNavController()
                 .navigate(R.id.action_homeFragment_to_loginFragment)
         }
-
-
-
-
 
         return view
     }

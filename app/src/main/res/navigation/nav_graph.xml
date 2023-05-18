@@ -16,9 +16,9 @@
     </fragment>
     <fragment
         android:id="@+id/selectLevelFragment"
-        android:name="com.example.vocapp.SelectLevelFragment"
+        android:name="com.example.vocapp.UserHomeFragment"
         android:label="fragment_select_level"
-        tools:layout="@layout/fragment_select_level" >
+        tools:layout="@layout/fragment_user_home" >
         <action
             android:id="@+id/action_selectLevelFragment_to_quizFragment"
             app:destination="@id/quizFragment" />
@@ -31,9 +31,9 @@
     </fragment>
     <fragment
         android:id="@+id/quizFragment"
-        android:name="com.example.vocapp.QuizFragment"
+        android:name="com.example.vocapp.PlacementTestFragment"
         android:label="fragment_quiz"
-        tools:layout="@layout/fragment_quiz" >
+        tools:layout="@layout/fragment_placement_test" >
         <action
             android:id="@+id/action_quizFragment_to_testResultFragment"
             app:destination="@id/testResultFragment" />
@@ -83,7 +83,16 @@
         android:name="totalScore"
         app:argType="string" />
         <action
-            android:id="@+id/action_testResultFragment_to_profileFragment"
-            app:destination="@id/profileFragment" />
+            android:id="@+id/action_testResultFragment_to_quizFragment2"
+            app:destination="@id/quizFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizFragment2"
+        android:name="com.example.vocapp.QuizFragment"
+        android:label="fragment_quiz"
+        tools:layout="@layout/fragment_quiz" >
+    <argument
+        android:name="totalScore"
+        app:argType="string" />
     </fragment>
 </navigation>

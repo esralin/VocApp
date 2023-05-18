@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".PlacementTestFragment">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.vocapp.PlacementTestViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background">
+
+        <TextView
+            android:id="@+id/wordDefinition"
+            android:layout_width="270dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/enteredWord"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:hint="@string/enter_the_word"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textColorHint="#8DFFFFFF"
+            app:layout_constraintEnd_toEndOf="@+id/wordDefinition"
+            app:layout_constraintHorizontal_bias="0.483"
+            app:layout_constraintStart_toStartOf="@+id/wordDefinition"
+            app:layout_constraintTop_toBottomOf="@+id/wordDefinition"
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
+
+        <Button
+            android:id="@+id/checkAnswerButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/check_answer"
+            app:layout_constraintEnd_toEndOf="@+id/enteredWord"
+            app:layout_constraintHorizontal_bias="0.517"
+            app:layout_constraintStart_toStartOf="@+id/enteredWord"
+            app:layout_constraintTop_toBottomOf="@+id/enteredWord"
+            tools:ignore="TextContrastCheck" />
+
+        <Button
+            android:id="@+id/nextQuestionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/next_question"
+            app:layout_constraintEnd_toEndOf="@+id/checkAnswerButton"
+            app:layout_constraintHorizontal_bias="0.333"
+            app:layout_constraintStart_toStartOf="@+id/checkAnswerButton"
+            app:layout_constraintTop_toBottomOf="@+id/checkAnswerButton"
+            tools:ignore="TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/answer"
+            android:layout_width="147dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="16dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/nextQuestionButton"
+            app:layout_constraintStart_toStartOf="@+id/nextQuestionButton"
+            app:layout_constraintTop_toBottomOf="@+id/nextQuestionButton" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
