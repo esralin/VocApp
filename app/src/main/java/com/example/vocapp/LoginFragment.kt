@@ -5,11 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.example.vocapp.databinding.FragmentLoginBinding
-import com.example.vocapp.databinding.FragmentSignUpBinding
 import com.google.android.material.snackbar.Snackbar
 
 

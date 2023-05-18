@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [Word::class, User::class, Score::class], version = 14, exportSchema = true)
+@Database(entities = [Word::class, User::class, Score::class], version = 16, exportSchema = true)
 abstract class WordDatabase : RoomDatabase() {
     abstract val wordDao : WordDao
     companion object {
@@ -19,7 +19,7 @@ abstract class WordDatabase : RoomDatabase() {
                         context.applicationContext,
                         WordDatabase::class.java,
                         "word_database"
-                    ).createFromAsset("database/word.db").allowMainThreadQueries().fallbackToDestructiveMigration().build()
+                    ).createFromAsset("database/wordClassified.db").allowMainThreadQueries().fallbackToDestructiveMigration().build()
                     INSTANCE = instance
                 }
                 return instance

@@ -7,6 +7,18 @@
     android:background="@color/background"
     tools:context=".TestResultFragment">
 
+    <Button
+        android:id="@+id/startToQuizButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/start_learn_ng"
+        app:layout_constraintEnd_toEndOf="@+id/englishLevel"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="@+id/englishLevel"
+        app:layout_constraintTop_toBottomOf="@+id/englishLevel"
+        tools:ignore="TextContrastCheck" />
+
     <TextView
         android:id="@+id/textView19"
         android:layout_width="wrap_content"
@@ -41,6 +53,20 @@
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/textView21"
+        app:layout_constraintStart_toStartOf="@+id/textView21"
+        app:layout_constraintTop_toBottomOf="@+id/resultScore" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="239dp"
+        android:layout_height="81dp"
+        android:layout_marginTop="240dp"
+        android:text="@string/explanation3"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/textView21"
+        app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toStartOf="@+id/textView21"
         app:layout_constraintTop_toBottomOf="@+id/resultScore" />
 

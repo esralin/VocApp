@@ -16,23 +16,87 @@
         android:background="@color/background">
 
         <TextView
-            android:id="@+id/wordDefinition"
-            android:layout_width="270dp"
-            android:layout_height="241dp"
-            android:layout_marginTop="16dp"
-            android:gravity="center"
+            android:id="@+id/answer2"
+            android:layout_width="147dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="10dp"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/nextQuestionButton2"
+            app:layout_constraintHorizontal_bias="0.571"
+            app:layout_constraintStart_toStartOf="@+id/nextQuestionButton2"
+            app:layout_constraintTop_toBottomOf="@+id/nextQuestionButton2" />
 
-        <EditText
-            android:id="@+id/enteredWord"
+        <TextView
+            android:id="@+id/totalCorrectAnswer"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/correct_answer_"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/answer2" />
+
+        <TextView
+            android:id="@+id/totalWrongAnswer"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="35dp"
+            android:text="@string/wrong_answer_"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/answer2" />
+
+        <TextView
+            android:id="@+id/currentScore"
+            android:layout_width="wrap_content"
+            android:layout_height="21dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="100dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/totalWrongAnswer"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/totalCorrectAnswer"
+            app:layout_constraintTop_toBottomOf="@+id/totalWrongAnswer" />
+
+        <Button
+            android:id="@+id/checkAnswerButton2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="15dp"
+            android:text="@string/check_answer"
+            app:layout_constraintEnd_toEndOf="@+id/enteredWord2"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="@+id/enteredWord2"
+            app:layout_constraintTop_toBottomOf="@+id/enteredWord2"
+            tools:ignore="TextContrastCheck" />
+
+        <Button
+            android:id="@+id/nextQuestionButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/next_question"
+            app:layout_constraintEnd_toEndOf="@+id/checkAnswerButton2"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/checkAnswerButton2"
+            app:layout_constraintTop_toBottomOf="@+id/checkAnswerButton2"
+            tools:ignore="TextContrastCheck" />
+
+        <EditText
+            android:id="@+id/enteredWord2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
             android:ems="10"
             android:hint="@string/enter_the_word"
             android:importantForAutofill="no"
@@ -40,70 +104,24 @@
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textColorHint="#8DFFFFFF"
-            app:layout_constraintEnd_toEndOf="@+id/wordDefinition"
-            app:layout_constraintHorizontal_bias="0.483"
-            app:layout_constraintStart_toStartOf="@+id/wordDefinition"
-            app:layout_constraintTop_toBottomOf="@+id/wordDefinition"
+            app:layout_constraintEnd_toEndOf="@+id/wordDefinition2"
+            app:layout_constraintStart_toStartOf="@+id/wordDefinition2"
+            app:layout_constraintTop_toBottomOf="@+id/wordDefinition2"
             tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
-        <Button
-            android:id="@+id/checkAnswerButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="@string/check_answer"
-            app:layout_constraintEnd_toEndOf="@+id/enteredWord"
-            app:layout_constraintHorizontal_bias="0.517"
-            app:layout_constraintStart_toStartOf="@+id/enteredWord"
-            app:layout_constraintTop_toBottomOf="@+id/enteredWord"
-            tools:ignore="TextContrastCheck" />
-
-        <Button
-            android:id="@+id/nextQuestionButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/next_question"
-            app:layout_constraintEnd_toEndOf="@+id/checkAnswerButton"
-            app:layout_constraintHorizontal_bias="0.333"
-            app:layout_constraintStart_toStartOf="@+id/checkAnswerButton"
-            app:layout_constraintTop_toBottomOf="@+id/checkAnswerButton"
-            tools:ignore="TextContrastCheck" />
-
         <TextView
-            android:id="@+id/answer"
-            android:layout_width="147dp"
-            android:layout_height="36dp"
-            android:layout_marginTop="16dp"
+            android:id="@+id/wordDefinition2"
+            android:layout_width="270dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="@+id/nextQuestionButton"
-            app:layout_constraintStart_toStartOf="@+id/nextQuestionButton"
-            app:layout_constraintTop_toBottomOf="@+id/nextQuestionButton" />
-
-        <TextView
-            android:id="@+id/textView17"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:text="@string/total_score1"
-            android:textColor="@color/white"
             android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="@+id/answer"
-            app:layout_constraintTop_toBottomOf="@+id/answer" />
-
-        <TextView
-            android:id="@+id/totalScore"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="25dp"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="@+id/answer"
-            app:layout_constraintStart_toEndOf="@+id/textView17"
-            app:layout_constraintTop_toBottomOf="@+id/answer" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

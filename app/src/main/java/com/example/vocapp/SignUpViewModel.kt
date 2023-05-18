@@ -3,7 +3,6 @@ package com.example.vocapp
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 import androidx.lifecycle.ViewModel
-import androidx.navigation.findNavController
 
 
 class SignUpViewModel(val dao: WordDao) : ViewModel() {

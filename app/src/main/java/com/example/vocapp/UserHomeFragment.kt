@@ -1,6 +1,5 @@
 package com.example.vocapp
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,7 +10,7 @@ import androidx.navigation.findNavController
 
 
 
-class SelectLevelFragment : Fragment() {
+class UserHomeFragment : Fragment() {
 
 
     override fun onCreateView(
@@ -19,20 +18,20 @@ class SelectLevelFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        val view = inflater.inflate(R.layout.fragment_select_level, container, false)
+        val view = inflater.inflate(R.layout.fragment_user_home, container, false)
 
-        val userEmail = SelectLevelFragmentArgs.fromBundle(requireArguments()).email
+        val userEmail = UserHomeFragmentArgs.fromBundle(requireArguments()).email
         
          val profileIcon = view.findViewById<ImageView>(R.id.profile_icon)
 
           profileIcon.setOnClickListener(){
-              val action = SelectLevelFragmentDirections
+              val action = UserHomeFragmentDirections
                   .actionSelectLevelFragmentToProfileFragment(userEmail)
               view.findNavController().navigate(action)
           }
 
 
-        val okButton = view.findViewById<Button>(R.id.levelSelectedButton)
+        val okButton = view.findViewById<Button>(R.id.startTestButton)
         okButton.setOnClickListener(){
             view.findNavController()
                 .navigate(R.id.action_selectLevelFragment_to_quizFragment)

@@ -1,7 +1,5 @@
 package com.example.vocapp
 
-import android.app.AlertDialog
-import android.content.DialogInterface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.example.vocapp.databinding.FragmentQuizBinding
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 
 class QuizFragment: Fragment() {
@@ -18,14 +15,16 @@ class QuizFragment: Fragment() {
     private var _binding: FragmentQuizBinding? = null
     private val binding get() = _binding!!
 
-    private var currentQuestionIndex : Int = 0
-    private var groupIndex : Int = 0
+    private var currentScore: Double = 0.0
+    private var currentLevel: Int = 0
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         _binding = FragmentQuizBinding.inflate(inflater, container, false)
         val view = binding.root
 
+        val score = QuizFragmentArgs.fromBundle(requireArguments()).totalScore
 
         val application = requireNotNull(this.activity).application
         val dao = WordDatabase.getInstance(application)!!.wordDao
@@ -35,46 +34,65 @@ class QuizFragment: Fragment() {
         )[QuizViewModel::class.java]
         binding.viewModel = viewModel
 
-        binding.wordDefinition.text = viewModel.getNewQuestion(4)
+
+        currentScore  = score.toDouble()
+        currentLevel  = viewModel.scoreToIndex(currentScore)
+        viewModel.indexToLevel(currentLevel)
+        viewModel.userScore = currentScore
 
 
-        binding.nextQuestionButton.setOnClickListener(){
-            binding.wordDefinition.text = viewModel.getNewQuestion(currentQuestionIndex)
-            binding.answer.text = ""
-            binding.enteredWord.text.clear()
+        binding.wordDefinition2.text = viewModel.getNewQuestion(currentLevel)
 
-            currentQuestionIndex += 1
-            groupIndex += 1
 
-            if(currentQuestionIndex == 5){
-                currentQuestionIndex = 0
-            }
 
-            var resultScore: String = ""
-            resultScore = binding.totalScore.text.toString()
+        binding.nextQuestionButton2.setOnClickListener(){
 
-            val score = Score()
-            score.score = resultScore.toDouble()
-            dao.insertScore(score)
+            currentLevel = viewModel.determineLevel(currentScore) //calls skewNormalDistribution and scoreToIndex
+            binding.wordDefinition2.text = viewModel.getNewQuestion(currentLevel)
+            binding.answer2.text = ""
+            binding.enteredWord2.text.clear()
 
-            if(groupIndex >= 5){
-                val action = QuizFragmentDirections
-                    .actionQuizFragmentToTestResultFragment(resultScore)
-                view.findNavController().navigate(action)
-            }
+            binding.currentScore.text = "Current Score: "+String.format("%.2f", currentScore)
+
 
         }
 
 
-        binding.checkAnswerButton.setOnClickListener(){
-            var correctAnswer = dao.getWordByDefinition(binding.wordDefinition.text as String).word
-            var userAnswer = binding.enteredWord.text.toString()
+        var totalCorrectScore = 0
+        var totalWrongScore = 0
+        var count: Int = 0
+        binding.checkAnswerButton2.setOnClickListener(){
+            var correctAnswer = dao.getWordByDefinition(binding.wordDefinition2.text as String).word
+            var userAnswer = binding.enteredWord2.text.toString()
 
-            var calculatedScore = viewModel.calculateScore(correctAnswer,userAnswer)
-            val formattedScore = String.format("%.2f", calculatedScore)
+            var wordlevel = dao.getWordByAnswer(correctAnswer).level
 
-            binding.answer.text = correctAnswer
-            binding.totalScore.text = formattedScore
+            var answerCorrectness = viewModel.controlCorrectness(correctAnswer,userAnswer)
+
+            viewModel.calculateScore(wordlevel,answerCorrectness)
+
+            count += 1
+
+
+            if(count >= 20){
+                currentScore += viewModel.updateScore()
+                if(currentScore < 0.0){
+                    currentScore = 0.0
+                }
+                viewModel.updateUserLevel(currentScore)
+            }
+
+
+            if(correctAnswer == userAnswer){
+                totalCorrectScore += 1
+            }
+            else{
+                totalWrongScore += 1
+            }
+
+            binding.answer2.text = correctAnswer
+            binding.totalCorrectAnswer.text = "Correct Answer: "+"$totalCorrectScore"
+            binding.totalWrongAnswer.text = "Wrong Answer: "+"$totalWrongScore"
 
         }
 
