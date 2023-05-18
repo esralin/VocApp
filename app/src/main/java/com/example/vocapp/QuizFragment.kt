@@ -47,14 +47,10 @@ class QuizFragment: Fragment() {
 
         binding.nextQuestionButton2.setOnClickListener(){
 
-            currentLevel = viewModel.determineLevel(currentScore) //calls skewNormalDistribution and scoreToIndex
+            currentLevel = viewModel.determineLevel(currentScore)
             binding.wordDefinition2.text = viewModel.getNewQuestion(currentLevel)
             binding.answer2.text = ""
             binding.enteredWord2.text.clear()
-
-            binding.currentScore.text = "Current Score: "+String.format("%.2f", currentScore)
-
-
         }
 
 
